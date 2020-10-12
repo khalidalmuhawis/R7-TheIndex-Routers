@@ -17,19 +17,20 @@ const AuthorDetail = () => {
 
   const authorName = `${author.first_name} ${author.last_name}`;
 
-  const getAuthor = async () => {
-    setLoading(true);
-    try {
-      const res = await instance.get(`/api/authors/${authorID}`);
-      const author = res.data;
-      setAuthor(author);
-      setLoading(false);
-    } catch (err) {
-      console.error(err);
-    }
-  };
 
   useEffect(() => {
+    const getAuthor = async () => {
+      setLoading(true);
+      try {
+        const res = await instance.get(`/api/authors/${authorID}`);
+        const author = res.data;
+        setAuthor(author);
+        setLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
     getAuthor();
   }, [authorID]);
 

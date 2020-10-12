@@ -1,9 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 // Logo
 import logo from "./assets/theindex.svg";
-
 const Sidebar = () => {
   return (
     <div id="sidebar">
@@ -11,10 +9,11 @@ const Sidebar = () => {
       <section>
         <h4 className="menu-item">
           <NavLink to="/authors">AUTHORS</NavLink>
+          <br></br>
+          <NavLink to="/books">BOOKS</NavLink>
         </h4>
       </section>
     </div>
   );
 };
-
 export default Sidebar;
